@@ -23,7 +23,8 @@
 			timeout: 30 * 1000,
 			routingOptions: {
 				alternatives: true,
-				steps: true
+				steps: true,
+				excludeOpts: ''
 			},
 			polylinePrecision: 5,
 			useHints: true,
@@ -52,6 +53,15 @@
 					'provider for production.');
 			}
 		},
+		
+		/* update option holding the string containing the classes to
+		 * exclude when routing: classString is
+		 * 'exclude=ferry,toll,motorway' or any combination of the classes
+		 */
+		setExclude: function(classString) {
+                        this.options.routingOptions.excludeOpts = classString;
+                        // console.log(this.options.routingOptions);
+                },
 
 		route: function(waypoints, callback, context, options) {
 			var timedOut = false,
@@ -353,6 +363,7 @@
 				(options.geometryOnly ? (options.simplifyGeometry ? '' : 'overview=full') : 'overview=false') +
 				'&alternatives=' + computeAlternative.toString() +
 				'&steps=' + computeInstructions.toString() +
+				this.options.routingOptions.excludeOpts +
 				(this.options.useHints ? '&hints=' + hints.join(';') : '') +
 				(options.allowUTurns ? '&continue_straight=' + !options.allowUTurns : '');
 		},
