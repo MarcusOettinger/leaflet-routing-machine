@@ -1,6 +1,13 @@
 [Leaflet Routing Machine]((https://www.liedman.net/leaflet-routing-machine/)) [![NPM version](https://img.shields.io/npm/v/leaflet-routing-machine.svg)](https://www.npmjs.com/package/leaflet-routing-machine) ![Leaflet 1.0 compatible!](https://img.shields.io/badge/Leaflet%201.0-%E2%9C%93-1EB300.svg?style=flat) [![Join the chat at https://gitter.im/leaflet-routing-machine/Lobby](https://badges.gitter.im/leaflet-routing-machine/Lobby.svg)](https://gitter.im/leaflet-routing-machine/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 =======================
 
+This is a fork of Per Liedman's great routing machine tailored for my needs:
+* I added some logic to exclude ferries, toll roads and motorways in proposed routes (as I like to travel by motorbike).
+* Localization makes the plugin way too heavy (for my tastes, that is). So I just kept en and de - that way it is much lighter.
+
+
+
+
 **This plugin is barely maintained!** It has been a good long while since I had any reason to work with routing or Leaflet, and it does not look like that will change. I do not spend time on maintaining this plugin, and only rarely can I find time to respond to issues. If you want to take over as maintainer, feel free to contact me at per@liedman.net.
 
 Find the way from A to B on a Leaflet map. The plugin supports multiple backends:
