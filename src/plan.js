@@ -110,6 +110,44 @@
 				waypoints = this._waypoints,
 			    addWpBtn,
 			    reverseBtn;
+			
+			/* append a new div after the geocoding inputs holding the checkboxes */
+			var cb= L.DomUtil.create('div', 'leaflet-routing-oeoptions', container);
+                        cb.innerHTML = 'Exclude:<br>';
+                        var l;
+                        l = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
+                        l.innerHTML = 'ferries';                 
+                        var fer = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
+                        fer.type = 'checkbox';
+                        l = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
+                        l.innerHTML = 'toll';            
+                        var tol = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
+                        tol.type = 'checkbox';
+                        l = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
+                        l.innerHTML = 'motorways';               
+                        var mot = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
+                        mot.type = 'checkbox';
+			
+			/* construct the parameter string used in the routing query, set
+			 * option and fire a changed event to calculate a new route */
+                        function buildExclude(that) {
+                                var exclude = '',
+                                    extmp = '';
+
+                                if (fer.checked) extmp = 'ferry';
+                                if (tol.checked) extmp += extmp !== '' ? ',toll' : 'toll';
+                                if (mot.checked) extmp += extmp !== '' ? ',motorway' : 'motorway';
+                                if (extmp !== '') exclude = '&exclude=' + extmp;
+                                
+                                that.options.router.setExclude(exclude);
+                                that._fireChanged(); 
+
+                                return exclude;
+                        }
+                        
+                        L.DomEvent.addListener(fer, 'change', function(){ buildExclude(this); }, this);
+                        L.DomEvent.addListener(tol, 'change', function(){ buildExclude(this); }, this);
+                        L.DomEvent.addListener(mot, 'change', function(){ buildExclude(this); }, this);
 
 			this._geocoderContainer = container;
 			this._geocoderElems = [];
