@@ -29,6 +29,7 @@
 			polylinePrecision: 5,
 			useHints: true,
 			suppressDemoServerWarning: false,
+			stepToText: true,
 			language: 'en'
 		},
 
