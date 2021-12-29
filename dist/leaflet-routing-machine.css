@@ -248,6 +248,23 @@
     margin-left: 10px !important;
 }
 
+.leaflet-routing-exlbl {
+    display:inline;
+    margin: 0;
+    padding: 0;
+}
+.leaflet-routing-exclude {
+    width:15px !important;
+    display:inline;
+    padding: 0px;
+    margin-right:15px;
+}
+.leaflet-routing-oeoptions {
+    font-size: 80%;
+    color: #777;
+}
+
+
 @media only screen and (max-width: 640px) {
     .leaflet-routing-container {
         margin: 0 !important;
