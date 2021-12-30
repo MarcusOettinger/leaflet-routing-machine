@@ -1,5 +1,5 @@
-/* localization_simple.js: siplest form - just de/en as I will only use those
- * Wed 29 Dec 19:34:28 CET 2021
+/* localization_simple.js: simplest form - just de/en as I will only use those
+ * Thursday, 30-Dec-21 06:56:41 UTC
  */
 /* 
    NOTICE
@@ -103,7 +103,11 @@
 			ui: {
 				startPlaceholder: 'Start',
 				viaPlaceholder: 'Via {viaNumber}',
-				endPlaceholder: 'End'
+				endPlaceholder: 'End',
+				exclude: 'Exclude',
+				ferry: 'ferries',
+				toll: 'toll roads',
+				motorway: 'motorways'
 			},
 			units: {
 				meters: 'm',
@@ -173,7 +177,11 @@
 			ui: {
 				startPlaceholder: 'Start',
 				viaPlaceholder: 'Via {viaNumber}',
-				endPlaceholder: 'Ziel'
+				endPlaceholder: 'Ziel',
+				exclude: 'Vermeide',
+				ferry: 'Fähren',
+				toll: 'Mautstraßen',
+				motorway: 'Autobahnen'
 			}
 		}
 
