@@ -1,6 +1,6 @@
 {
   "name": "leaflet-routing-machine",
-  "version": "3.2.12",
+  "version": "3.2.12a",
   "description": "Routing for Leaflet",
   "directories": {
     "example": "examples",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/perliedman/leaflet-routing-machine.git"
+    "url": "git://github.com/MarcusOettinger/leaflet-routing-machine.git"
   },
   "keywords": [
     "leaflet",

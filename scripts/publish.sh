@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/mksh
 
 VERSION=`echo "console.log(require('./package.json').version)" | node`
 ORIGIN=`git remote -v|grep origin|head -n1|cut -f2|cut -d" " -f1`
@@ -35,4 +35,7 @@ cd $CWD
 rm -rf $TMP
 
 git checkout master
+git add dist/* -f
+git commit -m "built distfiles v$VERSION"
+git push origin gh-pages
 git branch -D build
