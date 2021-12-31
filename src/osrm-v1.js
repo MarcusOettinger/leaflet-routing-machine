@@ -4,7 +4,7 @@
 	var L = require('leaflet'),
 		corslite = require('@mapbox/corslite'),
 		polyline = require('@mapbox/polyline'),
-		osrmTextInstructions = require('osrm-text-instructions')('v5');
+		osrmTextInstructions = require('osrm-text-instructions-light-de-en')('v5');
 
 	// Ignore camelcase naming for this file, since OSRM's API uses
 	// underscores.
@@ -29,7 +29,7 @@
 			polylinePrecision: 5,
 			useHints: true,
 			suppressDemoServerWarning: false,
-			stepToText: true,
+			stepToText: false,
 			language: 'en'
 		},
 

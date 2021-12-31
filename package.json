@@ -43,6 +43,6 @@
   "dependencies": {
     "@mapbox/corslite": "0.0.7",
     "@mapbox/polyline": "^0.2.0",
-    "osrm-text-instructions": "^0.13.2"
+    "osrm-text-instructions-light-de-en": "file:../osrm-text-instructions-light-de-en"
   }
 }
