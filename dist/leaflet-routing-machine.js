@@ -1061,7 +1061,7 @@ if (typeof module === 'object' && module.exports) {
 
 	var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null);
 	var Autocomplete = _dereq_('./autocomplete');
-	var Localization = _dereq_('./localization');
+	var Localization = _dereq_('./localization_simple');
 
 	function selectInputText(input) {
 		if (input.setSelectionRange) {
@@ -1208,7 +1208,7 @@ if (typeof module === 'object' && module.exports) {
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./autocomplete":3,"./localization":12}],8:[function(_dereq_,module,exports){
+},{"./autocomplete":3,"./localization_simple":13}],8:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
     Control = _dereq_('./control'),
@@ -3182,6 +3182,7 @@ module.exports = L.Routing = {
 	var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null);
 	var GeocoderElement = _dereq_('./geocoder-element');
 	var Waypoint = _dereq_('./waypoint');
+	var Localization = _dereq_('./localization_simple');
 
 	module.exports = (L.Layer || L.Class).extend({
 		includes: ((typeof L.Evented !== 'undefined' && L.Evented.prototype) || L.Mixin.Events),
@@ -3288,21 +3289,22 @@ module.exports = L.Routing = {
 				waypoints = this._waypoints,
 			    addWpBtn,
 			    reverseBtn;
+			var l = new Localization(geocoderElement.options.language).localize('ui');
 			
 			/* append a new div after the geocoding inputs holding the checkboxes */
 			var cb= L.DomUtil.create('div', 'leaflet-routing-oeoptions', container);
                         cb.innerHTML = 'Exclude:<br>';
-                        var l;
-                        l = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
-                        l.innerHTML = 'ferries';                 
+                        var lb;
+                        lb = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
+                        lb.innerHTML = l.ferry;                 
                         var fer = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
                         fer.type = 'checkbox';
-                        l = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
-                        l.innerHTML = 'toll';            
+                        lb = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
+                        lb.innerHTML = 'toll';            
                         var tol = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
                         tol.type = 'checkbox';
-                        l = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
-                        l.innerHTML = 'motorways';               
+                        lb = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
+                        lb.innerHTML = 'motorways';               
                         var mot = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
                         mot.type = 'checkbox';
 			
@@ -3574,7 +3576,7 @@ module.exports = L.Routing = {
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./geocoder-element":7,"./waypoint":17}],17:[function(_dereq_,module,exports){
+},{"./geocoder-element":7,"./localization_simple":13,"./waypoint":17}],17:[function(_dereq_,module,exports){
 (function (global){
 (function() {
 	'use strict';
