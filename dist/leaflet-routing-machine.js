@@ -3289,11 +3289,11 @@ module.exports = L.Routing = {
 				waypoints = this._waypoints,
 			    addWpBtn,
 			    reverseBtn;
-			var l = new Localization(geocoderElement.options.language).localize('ui');
+			var l = new Localization(this.options.language).localize('ui');
 			
 			/* append a new div after the geocoding inputs holding the checkboxes */
 			var cb= L.DomUtil.create('div', 'leaflet-routing-oeoptions', container);
-                        cb.innerHTML = l.exclude + '<br>';
+                        cb.innerHTML = l.exclude + ':<br>';
                         var lb;
                         lb = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
                         lb.innerHTML = l.ferry;                 
