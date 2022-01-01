@@ -4,6 +4,7 @@
 	var L = require('leaflet');
 	var GeocoderElement = require('./geocoder-element');
 	var Waypoint = require('./waypoint');
+	var Localization = require('./localization_simple');
 
 	module.exports = (L.Layer || L.Class).extend({
 		includes: ((typeof L.Evented !== 'undefined' && L.Evented.prototype) || L.Mixin.Events),
@@ -110,21 +111,22 @@
 				waypoints = this._waypoints,
 			    addWpBtn,
 			    reverseBtn;
+			var l = new Localization(geocoderElement.options.language).localize('ui');
 			
 			/* append a new div after the geocoding inputs holding the checkboxes */
 			var cb= L.DomUtil.create('div', 'leaflet-routing-oeoptions', container);
                         cb.innerHTML = 'Exclude:<br>';
-                        var l;
-                        l = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
-                        l.innerHTML = 'ferries';                 
+                        var lb;
+                        lb = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
+                        lb.innerHTML = l.ferry;                 
                         var fer = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
                         fer.type = 'checkbox';
-                        l = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
-                        l.innerHTML = 'toll';            
+                        lb = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
+                        lb.innerHTML = 'toll';            
                         var tol = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
                         tol.type = 'checkbox';
-                        l = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
-                        l.innerHTML = 'motorways';               
+                        lb = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
+                        lb.innerHTML = 'motorways';               
                         var mot = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
                         mot.type = 'checkbox';
 			
