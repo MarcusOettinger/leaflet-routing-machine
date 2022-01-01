@@ -3,7 +3,7 @@
 
 	var L = require('leaflet');
 	var Autocomplete = require('./autocomplete');
-	var Localization = require('./localization-simple');
+	var Localization = require('./localization_simple');
 
 	function selectInputText(input) {
 		if (input.setSelectionRange) {
