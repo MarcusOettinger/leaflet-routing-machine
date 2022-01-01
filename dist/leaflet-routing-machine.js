@@ -3293,18 +3293,18 @@ module.exports = L.Routing = {
 			
 			/* append a new div after the geocoding inputs holding the checkboxes */
 			var cb= L.DomUtil.create('div', 'leaflet-routing-oeoptions', container);
-                        cb.innerHTML = 'Exclude:<br>';
+                        cb.innerHTML = l.exclude + '<br>';
                         var lb;
                         lb = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
                         lb.innerHTML = l.ferry;                 
                         var fer = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
                         fer.type = 'checkbox';
                         lb = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
-                        lb.innerHTML = 'toll';            
+                        lb.innerHTML = l.toll;            
                         var tol = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
                         tol.type = 'checkbox';
                         lb = L.DomUtil.create('label', 'leaflet-routing-exlbl', cb);
-                        lb.innerHTML = 'motorways';               
+                        lb.innerHTML = l.motorway;               
                         var mot = L.DomUtil.create('input', 'leaflet-routing-exclude', cb);
                         mot.type = 'checkbox';
 			
